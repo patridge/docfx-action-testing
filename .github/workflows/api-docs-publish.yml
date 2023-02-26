@@ -43,7 +43,7 @@ jobs:
       #  run: dotnet restore
       - name: DocFX Build
         working-directory: docs
-        run: docfx docfx.json
+        run: docfx docfx/docfx.json
         continue-on-error: false
       - name: Publish
         # TODO: Make sure we publish both on push and manual run.
