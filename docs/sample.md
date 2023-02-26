@@ -1,0 +1,1 @@
+Test to see if DocFX needs a destination folder that already exists.
