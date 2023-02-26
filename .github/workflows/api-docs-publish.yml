@@ -1,0 +1,55 @@
+name: Generate and deploy API docs to Pages
+# Reference: https://tehgm.net/blog/docfx-github-actions/
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    # TODO: Deploy `main` to primary domain, `dev` to beta domain.
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only run one concurrent deployment per branch (or run ID for manual run).
+# NOTE: This may only prevent one run of any action per branch name, possibly not unique across all actions.
+concurrency:
+  group: ${{ github.ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  generate-docs:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 3.1.x
+      - name: Setup DocFX
+        uses: crazy-max/ghaction-chocolatey@v2
+        with:
+          args: install docfx
+      - name: Install dependencies
+        run: dotnet restore
+      - name: DocFX Build
+        working-directory: docs
+        run: docfx docfx.json
+        continue-on-error: false
+      - name: Publish
+        # TODO: Make sure we publish both on push and manual run.
+        #if: github.event_name == 'push'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/_site
+          force_orphan: true
