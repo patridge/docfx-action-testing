@@ -39,8 +39,12 @@ jobs:
         uses: crazy-max/ghaction-chocolatey@v2
         with:
           args: install docfx
-      #- name: Install dependencies
-      #  run: dotnet restore
+      - name: Get code repos to use with DocFX
+        uses: actions/checkout@v3
+        with:
+          repository: 'WildernessLabs/Meadow.Core'
+          ref: 'main' # Not required, but will be changed for staging site.
+          path: 'Source/Meadow.Core'
       - name: DocFX Build
         #working-directory: docs
         run: docfx docfx/docfx.json
