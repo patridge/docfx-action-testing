@@ -39,9 +39,6 @@ jobs:
         uses: crazy-max/ghaction-chocolatey@v2
         with:
           args: install docfx
-      - name: DocFX Build
-        run: docfx docfx/docfx.json
-        continue-on-error: false
       - name: Clone Meadow.Core
         uses: actions/checkout@v3
         with:
@@ -54,6 +51,9 @@ jobs:
           repository: 'WildernessLabs/Meadow.Foundation'
           ref: 'main' # Not required, but will be changed for staging site.
           path: 'Source/Meadow.Foundation'
+      - name: DocFX Build
+        run: docfx docfx/docfx.json
+        continue-on-error: false
       - name: Publish
         # TODO: Make sure we publish both on push and manual run.
         #if: github.event_name == 'push'
