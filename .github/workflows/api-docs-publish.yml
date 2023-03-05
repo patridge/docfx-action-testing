@@ -46,7 +46,7 @@ jobs:
           ref: 'main' # Not required, but will be changed for staging site.
           path: 'Source/Meadow.Core'
       - name: DocFX Build
-        #working-directory: docs
+        working-directory: 'Source'
         run: docfx docfx/docfx.json
         continue-on-error: false
       - name: Publish
