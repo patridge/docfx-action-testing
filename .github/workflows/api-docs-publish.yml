@@ -43,6 +43,7 @@ jobs:
           path: 'Source/${{ matrix.repo-name}}'
 
   generate-docs:
+    needs: [ 'checkout-code-repos' ]
     runs-on: windows-latest
 
     steps:
