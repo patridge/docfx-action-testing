@@ -6,7 +6,7 @@
           "files": [
             "/**.csproj"
           ],
-          "src": "/Source/Meadow.Core/source/Meadow.Core"
+          "src": "Source/Meadow.Core/source/Meadow.Core"
         }
       ],
       "dest": "api/Meadow",
