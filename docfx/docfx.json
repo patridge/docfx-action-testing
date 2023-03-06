@@ -4,7 +4,7 @@
       "src": [
         {
           "files": [
-            "/**.csproj"
+            "**.csproj"
           ],
           "src": "../Source/Meadow.Core/source/Meadow.Core"
         }
@@ -17,22 +17,7 @@
       "src": [
         {
           "files": [
-            "/**.csproj"
-          ],
-          "exclude": [
-            "../Source/Meadow.Foundation.Core.Samples/**",
-            "../Source/Meadow.Foundation.Peripherals/**/Driver/bin/**",
-            "../Source/Meadow.Foundation.Peripherals/**/Driver/obj/**",
-            "../Source/Meadow.Foundation.Peripherals/**/Datasheet/**",
-            "../Source/Meadow.Foundation.Peripherals/**/Sample/**",
-            "../Source/Meadow.Foundation.Peripherals/**/Samples/**",
-            "../Source/Meadow.Foundation.Peripherals/ICs.IOExpanders.Tca9548A/**",
-            "../Source/Meadow.Foundation.Libraries_and_Frameworks/**/Driver/bin/**",
-            "../Source/Meadow.Foundation.Libraries_and_Frameworks/**/Driver/obj/**",
-            "../Source/Meadow.Foundation.Libraries_and_Frameworks/**/Sample/**",
-            "../Source/Meadow.Foundation.Libraries_and_Frameworks/**/Samples/**",
-            "../Source/Meadow.Foundation.Libraries_and_Frameworks/Web.Maple.MapleServer/Tests/**",
-            "../Source/Meadow.Foundation.Libraries_and_Frameworks/Web.Maple.MapleServer/Utilities/**"
+            "**.csproj"
           ],
           "src": "../Source/Meadow.Foundation"
         }
@@ -45,13 +30,13 @@
       "src": [
         {
           "files": [
-            "/**.csproj"
+            "**.csproj"
           ],
           "exclude": [
-            "../Source/**/Sample/**",
-            "../Source/**/Samples/**",
-            "../Source/**/Driver/bin/**",
-            "../Source/**/Driver/obj/**"
+            "**/Sample/**",
+            "**/Samples/**",
+            "**/Driver/bin/**",
+            "**/Driver/obj/**"
           ],
           "src": "../Source/Meadow.Foundation.Grove"
         }
@@ -64,13 +49,13 @@
       "src": [
         {
           "files": [
-            "/**.csproj"
+            "**.csproj"
           ],
           "exclude": [
-            "../Source/**/Sample/**",
-            "../Source/**/Samples/**",
-            "../Source/**/Driver/bin/**",
-            "../Source/**/Driver/obj/**"
+            "**/Sample/**",
+            "**/Samples/**",
+            "**/Driver/bin/**",
+            "**/Driver/obj/**"
           ],
           "src": "../Source/Meadow.Foundation.FeatherWings"
         }
@@ -83,13 +68,13 @@
       "src": [
         {
           "files": [
-            "/**.csproj"
+            "**.csproj"
           ],
           "exclude": [
-            "../Source/**/Sample/**",
-            "../Source/**/Samples/**",
-            "../Source/**/Driver/bin/**",
-            "../Source/**/Driver/obj/**"
+            "**/Sample/**",
+            "**/Samples/**",
+            "**/Driver/bin/**",
+            "**/Driver/obj/**"
           ],
           "src": "../Source/Meadow.Foundation.mikroBUS"
         }
