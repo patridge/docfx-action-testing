@@ -39,6 +39,18 @@ jobs:
         uses: crazy-max/ghaction-chocolatey@v2
         with:
           args: install docfx
+      - name: Clone Meadow.Contracts
+        uses: actions/checkout@v3
+        with:
+          repository: 'WildernessLabs/Meadow.Contracts'
+          ref: 'main' # Not required, but will be changed for staging site.
+          path: 'Source/Meadow.Contracts'
+      - name: Clone Meadow.Units
+        uses: actions/checkout@v3
+        with:
+          repository: 'WildernessLabs/Meadow.Units'
+          ref: 'main' # Not required, but will be changed for staging site.
+          path: 'Source/Meadow.Units'
       - name: Clone Meadow.Core
         uses: actions/checkout@v3
         with:
