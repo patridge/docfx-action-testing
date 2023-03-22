@@ -63,6 +63,10 @@ jobs:
           repository: 'WildernessLabs/Meadow.Foundation'
           ref: 'main' # Not required, but will be changed for staging site.
           path: 'Source/Meadow.Foundation'
+      - name: Debug logging
+        run: |
+          echo "::debug::Testing debug system"
+          ls Source | echo
       - name: DocFX Build
         run: docfx docfx/docfx.json
         continue-on-error: false
