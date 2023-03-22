@@ -65,8 +65,8 @@ jobs:
           path: 'Source/Meadow.Foundation'
       - name: Debug logging
         run: |
-          echo "::debug::Testing debug system"
-          ls Source | echo
+          echo "::debug::Did we get the repos?"
+          find . -maxdepth 2 -type d -exec ls -d | echo
       - name: DocFX Build
         run: docfx docfx/docfx.json
         continue-on-error: false
